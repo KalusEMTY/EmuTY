@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <style>
     body {
@@ -32,16 +33,51 @@
 .link:hover {
     zoom: 110%;
 }
+#pass {
+    display: grid;
+    justify-items: center;
+    height: 100%;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+#pass > input {
+    zoom: 130%;
+}
 </style>
 <body>
+    <div id="pass">
+        <p>Password
+            <br>
+            <input id="log-in" type="text">
+            <input id="log-btn" type="button" value="Login">
+        </p>
+        
+    </div>
     <div id="links">
         <div class="link">
             <a href="/pokemon_emerald.html">Pokemon Emerald</a>
         </div>
         <div class="link">
-            <a href="/pokemon_emerald.html">Pokemon White</a>
+            <a href="/pokemon_white.html">Pokemon White</a>
         </div>
 
     </div>
 </body>
+<script>
+    $("#links").hide()
+    if (localStorage.logged == "true") {
+        $("#links").show()
+        $("#pass").hide()    
+    }
+    
+    $("#log-btn").on("click", () => {
+        if ($("#log-in").val() == "1908") {
+            $("#links").show()
+            localStorage.logged = true
+            console.log("login");
+            $("#pass").hide()
+        }
+    })
+</script>
 </html>

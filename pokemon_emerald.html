@@ -3,6 +3,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
+<style>
+    body {
+        background-color: rgb(163, 163, 163);
+        font-size: 15px;
+    }
+    #myFormId {
+        font-weight: 1000;
+        zoom: 130%;
+        color: rgb(27, 25, 25);
+        font-family: monospace 
+    }
+    input, button {
+        font-size: 10px;
+    }
+    @media screen and (max-width : 1000px) {
+        body {
+            font-size: 4.2vw;
+        }
+        input, button {
+            font-size: 3.2vw;
+        }
+        #warn {
+            font-size: 3.2vw;
+        }
+    }
+</style>
 <body id="body">
     
 
@@ -26,7 +52,6 @@
 </form>
 <script src="data/tempFiles.js"></script>
 <script type='text/javascript'>
-    
     
     EJS_gameName = "Pokemon-Emerald Version(USA,Europe)"
     EJS_player = '#game';
@@ -68,6 +93,7 @@
     const game = document.createElement("div");
     display.id = "display";
     game.id = "game";
+    display.style = "width:640px;height:480px;max-width:100%"
     display.appendChild(game);
     document.getElementById("body").appendChild(display);
 
