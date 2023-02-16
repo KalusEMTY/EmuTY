@@ -54,7 +54,10 @@
 
 <script src="data/tempFiles.js"></script>
 <script type='text/javascript'>
-    
+    $("#body").hide()
+    if (localStorage.logged == "true") {
+        $("#body").show()
+    }
     
     EJS_gameName = "Mario64"
     EJS_player = '#game';

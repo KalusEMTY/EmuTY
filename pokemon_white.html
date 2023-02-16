@@ -54,7 +54,10 @@
 
 <script src="data/tempFiles.js"></script>
 <script type='text/javascript'>
-    
+    $("#body").hide()
+    if (localStorage.logged == "true") {
+        $("#body").show()
+    }
     
     EJS_gameName = "Pokemon_White_Version_PROPER_EUR_USA_NDS_DSi-EXiMiUS"
     EJS_player = '#game';
